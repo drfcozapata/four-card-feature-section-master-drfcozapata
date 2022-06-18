@@ -1,0 +1,163 @@
+/**** @Author: Francisco Zapata ****/
+
+/** Reset the document **/
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+	text-decoration: none;
+	list-style: none;
+}
+
+/** Custom Properties **/
+
+:root {
+	--red: hsl(0, 78%, 62%);
+	--cyan: hsl(180, 62%, 55%);
+	--orange: hsl(34, 97%, 64%);
+	--blue: hsl(212, 86%, 64%);
+	--very-dark-blue: hsl(234, 12%, 34%);
+	--grayish-blue: hsl(229, 6%, 66%);
+	--very-light-gray: hsl(0, 0%, 98%);
+}
+
+/** Globals **/
+
+body {
+	font-size: 15px;
+	font-family: 'Poppins', sans-serif;
+	background: var(--very-light-gray);
+	color: var(--grayish-blue);
+}
+.container {
+	padding-top: 80px;
+	width: 90%;
+	max-width: 110rem;
+	margin: 0 auto;
+}
+
+/** Header **/
+.header {
+	margin: 0 auto;
+	max-width: 320px;
+	text-align: center;
+}
+.principal-title {
+	font-weight: 200;
+	font-size: 1.5rem;
+	color: var(--very-dark-blue);
+}
+.principal-title__bold {
+	font-weight: 600;
+	font-size: 1.6rem;
+}
+.principal-text {
+	font-weight: 400;
+	margin-top: 15px;
+	margin-bottom: 70px;
+	font-size: 1rem;
+	color: var(--grayish-blue);
+}
+
+/** Cards **/
+.card-container {
+	margin-bottom: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+.card {
+	max-width: 300px;
+	padding: 20px 25px;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 0px 5px 10px #00000026;
+}
+.card-supervisor {
+	border-top: 4px solid var(--cyan);
+}
+.card-team {
+	border-top: 4px solid var(--red);
+}
+.card-karma {
+	border-top: 4px solid var(--orange);
+}
+.card-calculator {
+	border-top: 4px solid var(--blue);
+}
+.card__title {
+	font-weight: 600;
+	font-size: 1.4rem;
+	margin-bottom: 5px;
+	color: var(--very-dark-blue);
+}
+.card__text {
+	font-weight: 400;
+	font-size: 0.8rem;
+	line-height: 1.8;
+	margin-bottom: 20px;
+}
+.card__image {
+	width: 55px;
+	height: auto;
+	display: block;
+	margin-left: auto;
+}
+
+/** Footer **/
+.footer {
+	padding: 15px;
+}
+.attribution {
+	font-size: 0.7rem;
+}
+
+@media screen and (min-width: 768px) {
+	.header {
+		text-align: center;
+		max-width: 75%;
+		max-width: 530px;
+	}
+	.principal-title {
+		max-width: 375px;
+		margin: 0 auto;
+	}
+	.card-container {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+@media screen and (min-width: 1045px) {
+	.card-container {
+		max-width: 950px;
+		margin-left: auto;
+		margin-right: auto;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		grid-gap: 20px;
+	}
+	.card:nth-child(1),
+	.card:nth-child(4) {
+		grid-row: span 2;
+		align-self: center;
+	}
+	.card:nth-child(3) {
+		grid-row: 2 / 3;
+		grid-column: 2 / 3;
+	}
+}
